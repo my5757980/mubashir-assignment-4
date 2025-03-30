@@ -8,10 +8,20 @@ import { PiShoppingCartSimpleDuotone } from "react-icons/pi";
 import { ImCross } from "react-icons/im";
 import { FaRegUserCircle } from "react-icons/fa";
 import ResponsiveMenu from "../responsive-menu/responsive-menu";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+
+
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [open]);
   return (
     <div className="overflow-x-hidden">
 
